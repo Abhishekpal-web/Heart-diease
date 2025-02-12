@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"> <img src="360_F_552344587_VTpkrhKNuHcSWuuOc7zRjLlCGz1py371.jpg" style="height: 22px;" alt=""> <span></span>Heart Disease Prediction</div>
+        <ul class="nav-links">
+            <li> <a href="#" onclick="showHomePage()" target="_blank">Home</a></li>
+            <li><a href="#" onclick="showPredictionForm()">Predict</a></li>
+            <li><a href="#"target="_blank">About</a></li>
+            <li><a href="#"target="_blank">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </nav>
+    
+    <div class="container" id="homePageContent">
+        <h2>Welcome to the Heart Care <img src="360_F_552344587_VTpkrhKNuHcSWuuOc7zRjLlCGz1py371.jpg" alt="" style="height: 22px;"></h2>
+        <img src="images (2).jpg" alt="" style="position: relative; right: -395px; top: 22px;">
+        <br><br>
+        <!-- This button will show the prediction form when clicked -->
+        <button onclick="showPredictionForm()"  style="position: relative; right: -422px; top: 42px;" >Click for the prediction</button>
+    </div>
+  
+
+    <div class="container" id="predictionFormContainer" style="display: none;">
+        <h2>Heart Disease Prediction</h2>
+        <form id="predictionForm" onsubmit="showResult(event)">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="bloodPressure">Blood Pressure:</label>
+            <input type="number" id="bloodPressure" name="bloodPressure" required>
+
+            <label for="cholesterol">Cholesterol Level:</label>
+            <input type="number" id="cholesterol" name="cholesterol" required>
+
+            <label for="heartRate">Heart Rate:</label>
+            <input type="number" id="heartRate" name="heartRate" required>
+
+            <button type="submit">Predict</button>
+        </form>
+        <h1><style>
+            
+        </style>  
+    </div>
+ 
+
+    <script>
+        // Function to show the prediction form when the button is clicked
+        function showPredictionForm() {
+            document.getElementById('homePageContent').style.display = 'none'; // Hide the homepage content
+            document.getElementById('predictionFormContainer').style.display = 'block'; // Show the prediction form
+        }
+
+        // You can add other functions as needed, for example, to handle the result display
+        function showResult(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // For now, we can show a simple result (you can add prediction logic later)
+            document.getElementById('result').innerText = 'Prediction Result: Heart disease risk is low.'; 
+        }
+    </script>
+    <script src="script.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
